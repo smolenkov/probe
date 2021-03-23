@@ -14,6 +14,17 @@ violator_songs_list = [
     ['Blue Dress', 4.29],
     ['Clean', 5.83],
 ]
+dict_violator_song = {violator_songs_list[i][0] : violator_songs_list[i][1] for i in range(0 , len(violator_songs_list))} #list -> dictionary
+
+time_halo = dict_violator_song['Halo']
+time_Enjoy = dict_violator_song['Enjoy the Silence']
+time_Clean = dict_violator_song['Clean']
+
+summary_time = time_halo + time_Enjoy + time_Clean
+
+print(f'Три песни звучат {round(summary_time , 2)} минут')
+
+
 
 # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате
 #   Три песни звучат ХХХ минут
@@ -39,3 +50,10 @@ violator_songs_dict = {
 #   А другие три песни звучат ХХХ минут
 
 # TODO здесь ваш код
+time_Sweetest = violator_songs_dict['Sweetest Perfection']
+time_Policy = violator_songs_dict['Policy of Truth']
+time_Blue = violator_songs_dict['Blue Dress']
+
+summary_time1 = time_Sweetest + time_Policy + time_Blue
+
+print(f'Другие три песни звучат {round(summary_time1 , 2)} минут')
