@@ -35,6 +35,34 @@ store = {
 # например для ламп
 
 lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+
+table_cost1 = store[goods['Стол']][0]['quantity'] * store[goods['Стол']][0]['price']
+table_cost2 = store[goods['Стол']][1]['quantity'] * store[goods['Стол']][1]['price']
+table_quantity1 = store[goods['Стол']][0]['quantity']
+table_quantity2 = store[goods['Стол']][1]['quantity']
+table_cost = table_cost1+table_cost2
+table_quantity = table_quantity1 + table_quantity2
+print(f'Стол -{table_quantity} шт, стоимость -{table_cost} руб')
+
+sofa_cost1 = store[goods['Диван']][0]['quantity'] * store[goods['Диван']][0]['price']
+sofa_cost2 = store[goods['Диван']][1]['quantity'] * store[goods['Диван']][1]['price']
+sofa_quantity1 = store[goods['Диван']][0]['quantity']
+sofa_quantity2 = store[goods['Диван']][1]['quantity']
+sofa_cost = sofa_cost1+sofa_cost2
+sofa_quantity = sofa_quantity1 + sofa_quantity2
+print(f'Диван -{sofa_quantity} шт, стоимость -{sofa_cost} руб')
+
+chair_cost1 = store[goods['Стул']][0]['quantity'] * store[goods['Стул']][0]['price']
+chair_cost2 = store[goods['Стул']][1]['quantity'] * store[goods['Стул']][1]['price']
+chair_cost3 = store[goods['Стул']][2]['quantity'] * store[goods['Стул']][2]['price']
+chair_quantity1 = store[goods['Стул']][0]['quantity']
+chair_quantity2 = store[goods['Стул']][1]['quantity']
+chair_quantity3 = store[goods['Стул']][2]['quantity']
+chair_cost = chair_cost1 + chair_cost2 + chair_cost3
+chair_quantity = chair_quantity1 + chair_quantity2 + chair_quantity3
+print(f'Стул -{chair_quantity} шт, стоимость -{chair_cost} руб')
+
+
 # или проще (/сложнее ?)
 lamp_code = goods['Лампа']
 lamps_item = store[lamp_code][0]
