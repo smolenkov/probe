@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Есть словарь магазинов с распродажами
-
+from pprint import pprint
 shops = {
     'ашан':
         [
@@ -26,14 +26,37 @@ shops = {
             {'name': 'пирожное', 'price': 62.99}
         ],
 }
+'''
+list_shops = list(shops.keys())
+amound_shops=len(list_shops)
+print (f'Магазинов-{amound_shops} : {list_shops}') # список магазинов
+for i in range(len(list_shops)): # перебираем магазины
+    print(i, list_shops[i])
+    for y in range(len(list_shops[i])):
+        produkt_keys = list((shops[list_shops[i]][y]).keys())
+        for z in range(len(shops[list_shops[i]][y])):
+            print(shops[list_shops[i]][y][produkt_keys[z]])
+            #print(i ,y , z, produkt_keys[z])
 
-# Создайте словарь цен на продкты следующего вида (писать прямо в коде)
+
+#print (shops['ашан'].keys())
+#print(shops[list_shops[0]])
+'''
+# Создайте словарь цен на продукты следующего вида (писать прямо в коде)
+
 sweets = {
-    'название сладости': [
-        {'shop': 'название магазина', 'price': 99.99},
-        # TODO тут с клавиатуры введите магазины и цены (можно копипастить ;)
+    'печенье': [
+        {'shop': 'ашан', 'price': 9.99},
+        {'shop': 'пятерочка', 'price': 10.99},
+
     ],
-    # TODO тут с клавиатуры введите другую сладость и далее словарь магазинов
+    'конфеты': [
+        {'shop': 'ашан', 'price': 29.99},
+        {'shop': 'пятерочка', 'price': 39.99},
+
+    ],
+
 }
 # Указать надо только по 2 магазина с минимальными ценами
+
 
