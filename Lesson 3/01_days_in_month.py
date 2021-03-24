@@ -10,5 +10,10 @@
 user_input = input("Введите, пожалуйста, номер месяца: ")
 month = int(user_input)
 print('Вы ввели', month)
-
+if  month < 1 or month > 12:
+    print('номер месяца некорректен')
+else:
+    num_days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+    need_days = num_days[month-1]
+    print(f'в {month}-м месяце {need_days} дней')
 # TODO здесь ваш код
