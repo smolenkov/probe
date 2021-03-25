@@ -11,4 +11,13 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
+i = 2
+need_sum = 12000
+print(i, round(expenses, 2) , round(need_sum , 2))
+while i <= 10:
+    need_sum += expenses
+    expenses= expenses * 1.03
+    print(i, round(expenses, 2) , round(need_sum , 2))
+    i += 1
+have_sum = need_sum - 10 *10000
+print(f'Студенту надо попросить {round(have_sum, 2)} рублей')
