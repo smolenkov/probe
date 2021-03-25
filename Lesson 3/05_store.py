@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Есть словарь кодов товаров
-
+from pprint import pprint
 goods = {
     'Лампа': '12345',
     'Стол': '23456',
@@ -47,6 +47,20 @@ store = {
 #     вывод на консоль количества и стоимости товара на складе
 
 # TODO здесь ваш код
+coin_goods = {} # словарь количества позиций каждого товара
+price_goods = {} # итоговый словарь с суммой товаров и цен
+for good in goods:
+    coin_goods[good] = len(store[goods[good]])#  {товар : количество записей}
+    coin = 0 # промежуточный счетчик количества
+    price = 0 # промежуточный счетчик цены
+    for i in range(coin_goods[good]):
+        coin += store[goods[good]][i]['quantity']# доступ по ключу
+        price += store[goods[good]][i]['price']
+        price_goods[good] = ('количество-' , coin , 'стоимость - ' , price)
+
+
+pprint(coin_goods)
+pprint(price_goods)
 
 
 
