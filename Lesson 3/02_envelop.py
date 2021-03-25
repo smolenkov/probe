@@ -12,14 +12,25 @@
 envelop_x, envelop_y = 10, 7
 paper_x, paper_y = 8, 9
 # проверить для
-# paper_x, paper_y = 9, 8
-# paper_x, paper_y = 6, 8
-# paper_x, paper_y = 8, 6
-# paper_x, paper_y = 3, 4
-# paper_x, paper_y = 11, 9
-# paper_x, paper_y = 9, 11
+#paper_x, paper_y = 9, 8
+#paper_x, paper_y = 6, 8
+#paper_x, paper_y = 8, 6
+#paper_x, paper_y = 3, 4
+#paper_x, paper_y = 11, 9
+#paper_x, paper_y = 9, 11
 # (просто раскоментировать нужную строку и проверить свой код)
+if envelop_x > paper_x:
+    print('Горизонтально По Х проходит')
+    if envelop_y > paper_y:
+        print('Горизонтально По Y тоже проходит, поместится')
 
+elif envelop_x > paper_y:
+    print('Вертикально по Х проходит')
+    if envelop_y > paper_x:
+        print('Вертикально по Y проходит, поместится')
+
+else:
+    print('Не поместится')
 # TODO здесь ваш код
 
 # Усложненное задание, решать по желанию.
@@ -48,5 +59,14 @@ paper_x, paper_y = 8, 9
 # brick_x, brick_y, brick_z = 3, 6, 11
 # brick_x, brick_y, brick_z = 3, 11, 6
 # (просто раскоментировать нужную строку и проверить свой код)
-
+'''
 # TODO здесь ваш код
+if hole_y <= brick_y:
+    if hole_y<=brick_z:
+        print('Нет')
+elif hole_y <= paper_y:
+    print('Нет')
+
+else:
+    print('Да')
+'''
