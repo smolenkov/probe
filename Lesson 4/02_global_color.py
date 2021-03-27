@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import simple_draw as sd
 sd.resolution = (1200, 800)
+
 # Добавить цвет в функции рисования геом. фигур. из упр Lesson 4/01_shapes.py
 # (код функций скопировать сюда и изменить)
 # Запросить у пользователя цвет фигуры посредством выбора из существующих:
@@ -48,14 +49,11 @@ def poligon (point, angle, len, coin, color):
     delta_angle = 360/coin
     print(color)
     for i in range (0, coin):
-        # v1 = sd.get_vector(start_point=point, angle=angle+delta_angle*i, length=len)
+        v1 = sd.get_vector(start_point=point, angle=angle+delta_angle*i, length=len)
         # v1.draw()
-        sd.vector(start=point, angle = angle+delta_angle*i, lenght = len, color = color, width=2)
-
-        dx = math.cos(angle+delta_angle*i) * len
-        dy = math.sin(angle+delta_angle*i * len
-        point = sd.get_point(dx , dy)
-    sd.line(lock_point, v1.end_point, color = color)
+        sd.line(point, v1.end_point, color=color, width=3)
+        point = v1.end_point
+    sd.line(lock_point, v1.end_point, color = color, width=3)
 
 
 
