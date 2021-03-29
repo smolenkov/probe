@@ -16,3 +16,8 @@
 # Если не хватает инградиентов - создать соответствующие функции в модуле my_burger
 
 # TODO здесь ваш код
+list_ingredients = ['булочки', 'котлеты', 'огурчика', 'помидорчика', 'майонеза', 'сыра']
+from my_burger import cook
+for i in list_ingredients:
+    step_coocking = cook(ingredient = i)
+    print (step_coocking)
