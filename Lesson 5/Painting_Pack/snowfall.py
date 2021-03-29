@@ -3,7 +3,7 @@ from random import randint
 
 import simple_draw as sd
 
-sd.resolution = (1200,850)
+sd.resolution = (1200,800)
 import simple_draw as sd
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
@@ -28,7 +28,7 @@ def snowfall():
     speed_snow = []
     for i in range (coin_snow-1):
         x_snow.insert(i, randint(20, 600)) # первоначальное размещение снежинок вверху по горизонтали
-        y_snow.insert(i, 770) # высота первоначального размещения снежинок
+        y_snow.insert(i, 830) # высота первоначального размещения снежинок
         len_snow.insert(i, randint(10, 30)) # длина лучей снежинки
         speed_snow.insert(i, randint(1, 10)) #  смещение снежинки вниз на каждом шаге
         coin_iteration.insert(i, 3) # количество падений каждой снежинки
@@ -54,7 +54,7 @@ def snowfall():
                 coin_iteration[i] -= 1
                 x_end, y_end, len_end = x_snow, y_snow, len_snow
                 x_snow[i] = randint(20, 600)
-                y_snow[i] = 820
+                y_snow[i] = 830
                 len_snow[i] = randint(10, 30)
                 speed_snow[i] = randint(1, 10)
                 if coin_iteration[i] <= 0:
@@ -63,9 +63,9 @@ def snowfall():
             y_snow[i] -= speed_snow[i]
             snow_draw(x=x_snow[i], y=y_snow[i], len=len_snow[i])
             # sd.sleep (0.1)
-        print('coin_iteration - ', coin_iteration)
-        print('speed_snow - ', speed_snow)
-        print(set(speed_snow))
+        # print('coin_iteration - ', coin_iteration)
+        # print('speed_snow - ', speed_snow)
+        # print(set(speed_snow))
         if sd.user_want_exit():
             break
         if set(speed_snow) == {0}:
