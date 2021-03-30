@@ -4,7 +4,7 @@ from random import randint
 import simple_draw as sd
 
 sd.resolution = (1200,800)
-import simple_draw as sd
+
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
 # - нарисовать падение этих N снежинок
