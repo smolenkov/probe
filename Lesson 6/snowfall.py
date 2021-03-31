@@ -3,7 +3,7 @@ from random import randint
 
 import simple_draw as sd
 
-sd.resolution = (1200,800)
+#sd.resolution = (1200,800)
 # На основе кода из практической части реализовать снегопад:
 # - создать списки данных для отрисовки N снежинок
 # - нарисовать падение этих N снежинок
@@ -35,42 +35,39 @@ def create_one_snow (i):
     delta_x_snow.insert(i, randint(1, 5))
     delta_y_snow.insert(i, randint(1, 5))
     color_snow.insert(i, (randint(255), randint(255), randint(255)))
+    down_snow.insert(i,0)
 
 
-def snow_draw(x, y, len, color):
+def snow_draw(i):
+    x = x_snow[i]
+    y = y_snow[i]
+    len = len_snow[i]
+    color = color_snow[i]
     point = sd.get_point(x, y)
-    sd.snowflake(center=point, length=len)
+    sd.snowflake(center=point, length=len, color = color)
 
-def snow_clear(x, y, len):
+def snow_clear(i):
+    x = x_snow[i]
+    y = y_snow[i]
+    len = len_snow[i]
     point = sd.get_point(x, y)
     color_clear = sd.background_color
     sd.snowflake(center=point, length=len, color=color_clear)
 
-def checking_y_snow(y_snow, count_snow):
-    if y_snow  < 20:
-        down_snow[count_snow] = 1
+def checking_y_snow(i):
+    if y_snow[i]  < 20:
+        down_snow[i] = 1
 
+def delete_snow(i):
+    x_snow.pop(i)
+    y_snow.pop(i)
+    len_snow.pop(i)
+    delta_x_snow.pop(i)
+    delta_y_snow.pop(i)
+    color_snow.pop(i)
+    down_snow.pop(i)
 
-
-while True:
-    for i in range(coin_snow-1):
-        snow_clear(x=x_snow[i], y=y_snow[i], len=len_snow[i])
-        # sd.sleep(0.1)
-        if y_snow[i] <= 30:
-            snow_draw(x=x_snow[i], y=y_snow[i], len=len_snow[i])
-            x_snow[i] = randint(20, 1180)
-            y_snow[i] = 820
-            len_snow[i] = randint(10, 30)
-            speed_snow[i] = randint(1, 10)
-
-        y_snow[i] -= speed_snow[i]
-        snow_draw(x=x_snow[i], y=y_snow[i], len=len_snow[i])
-        # sd.sleep(0.1)
-    if sd.user_want_exit():
-        break
-
-
-sd.pause()
+# sd.pause()
 
 # подсказка! для ускорения отрисовки можно
 #  - убрать clear_screen()
