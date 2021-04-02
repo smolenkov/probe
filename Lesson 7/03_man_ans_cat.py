@@ -25,7 +25,43 @@ from random import randint
 
 # Человеку и коту надо вместе прожить 365 дней.
 
-# TODO здесь ваш код
+
+class Cat:
+
+    def __init__(self, name):
+        self.name = name
+        self.fullness = 50
+        self.house = None
+
+    def sleep(self):
+        print(f'кот{self.name} поспал')
+        self.fullness -= 10
+
+    def eat(self):
+        if self.house.food >= 10:
+            print(f'кот{self.name} поел')
+            self.fullness += 20
+            self.house.food -= 10
+        else:
+            print('нет еды')
+
+    def scratch(self):
+        print(f'кот{self.name} поцарапал обои')
+        self.fullness -= 10
+        self.house.mud +=5
+
+    def aсt:
+        if self.fullness <= 0:
+            print(f'кот {self.name} умер')
+            return
+        dice = randint(1, 3)
+        if self.fullness < 20:
+            self.eat()
+        elif dice == 1:
+            self.sleep()
+        elif dice == 2:
+            self.scratch()
+
 
 # Усложненное задание (делать по желанию)
 # Создать несколько (2-3) котов и подселить их в дом к человеку.
